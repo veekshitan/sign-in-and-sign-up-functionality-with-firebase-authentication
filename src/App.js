@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import Login from './pages/Login'
+import SignUp from "./pages/SignUp"
+import SuccessfulSignIn from './pages/successfulsignin'
+import SuccessfulSignUp from './pages/successfulsignup'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App () {
+  const [isAuth, setIsAuth] = React.useState(false);
+  return(
+    <Router>
+      <Routes>
+        <Route path = "/" element = {<Login setIsAuth = {setIsAuth}/>} />
+        <Route path = "/signup" element = {<SignUp />} />
+        <Route path = "/successfulsignin" element = {<SuccessfulSignIn />} />
+        <Route path = "/successfulsignup" element = {<SuccessfulSignUp />} />
+     </Routes>
+    </Router>
+  )
 }
-
-export default App;
