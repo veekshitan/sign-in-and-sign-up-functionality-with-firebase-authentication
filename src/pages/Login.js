@@ -27,7 +27,6 @@ export default function Login ({setIsAuth}) {
         signInWithPopup(auth, provider).then((result) => {
           setIsAuth(true)
           create_user(auth)
-          console.log(auth)
           navigate('/successfulsignin')
         })
     }
@@ -37,7 +36,6 @@ export default function Login ({setIsAuth}) {
       signInWithPopup(auth, provider).then((result) => {
         setIsAuth(true)
         create_user(auth)
-        console.log(auth)
         navigate('/successfulsignin')
       })
     }

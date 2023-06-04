@@ -34,7 +34,6 @@ export default function SignUp () {
       }));
     };
     
-    console.log(formData)
     const usersCollectionRef = collection(db, "users")
     // const handleSubmit = async (event) => {
     //     event.preventDefault();
